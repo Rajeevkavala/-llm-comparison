@@ -8,9 +8,9 @@ def run_parallel(prompt:str)-> dict:
 
     with ThreadPoolExecutor(max_workers=3) as executor:
         futures = {
-            "Chatgpt":executor.submit(chatgpt_response,prompt),
+            "ChatGPT":executor.submit(chatgpt_response,prompt),
             "Gemini":executor.submit(gemini_response,prompt),
-            "Llama":executor.submit(llama_response,prompt)
+            "LLaMA":executor.submit(llama_response,prompt)
         }
         for model,future in futures.items():
             try:
